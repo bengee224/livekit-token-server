@@ -29,7 +29,7 @@ app.post("/token", (req, res) => {
 
   res.json({ token: token.toJwt() });
 });
-
+app.get("/health", (req, res) => res.json({ ok: true }));
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Token server running on port ${port}`);
